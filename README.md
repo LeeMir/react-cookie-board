@@ -1,23 +1,29 @@
 # React-homework
 
-나는 세상에서 공부가 제일 싫다.
+게시판 구현해보기
 
-## Note
+## Frontend
 
 - - -
 
-Backend 없이 로컬에 json을 만들어서 사용
+- React
+- Material UI
+- scss
 
-Layout : scss와 material-ui
+## Backend
 
-Postlist.js : map을 통해 json에 저장되어 있는 모든 글을 출력
+- - -
 
-Read.js : 하나의 글을 본다
-
-Write.js : 글쓰기
+- Node
+- Express
+- Lowdb(json)
 
 ## 참고
 
 - - -
 
-[그냥 참고 하라고 아ㅋㅋ](https://grahams.tistory.com/280)
+[axios, styledComponent를 이용한 게시판 예시](https://grahams.tistory.com/280)
+
+[React - express 연결](https://hello-bryan.tistory.com/121)
+
+[LowDB 사용법](https://uhou.tistory.com/76)

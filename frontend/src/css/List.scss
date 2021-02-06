@@ -1,9 +1,11 @@
 @import './base.scss';
 
+.bg {
+    background-color: #f0f0f0 !important;
+}
 .inline {
     display: inline;
 }
-
-ListItemText {
-    text-decoration: none;
+.post {
+    background-color: #fafafa;
 }
