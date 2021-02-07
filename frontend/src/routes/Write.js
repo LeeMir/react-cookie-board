@@ -12,7 +12,7 @@ class Write extends Component {
         content: ''
     };
 
-    postBoard = async() => {
+    postWrite = async() => {
         try{
             if(this.state.title!==''&&this.state.author!==''&&this.state.content!=='') {
                 await fetch('http://localhost:3001/api/write', {
@@ -92,7 +92,7 @@ class Write extends Component {
                         </Link>
                         <Button
                             variant="outlined"
-                            onClick={this.postBoard}
+                            onClick={this.postWrite}
                         >
                             전송하기
                         </Button>

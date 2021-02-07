@@ -29,23 +29,32 @@ class Read extends Component {
         }
     }
 
-    componentDidMount() {
-        const id = {
-            id: this.props.match.params.postid
-        };
-        fetch('http://localhost:3001/api/read', {
-            method: 'post',
-            headers: {
-                'content-type' : 'application/json'
-            },
-            body: JSON.stringify(id)
-        })
-            .then(res=>res.json())
-            .then(data=>{
-                this.setState({boards:data});
-            }
-        );
+    loadingData = async () => {
+        try {
+            const id = {
+                id: this.props.match.params.postid
+            };
+            fetch('http://localhost:3001/api/read', {
+                method: 'post',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(id)
+            })
+                .then(res=>res.json())
+                .then(data=>{
+                    this.setState({boards:data});
+                }
+            );
+        } catch(e) {
+            console.log(e);
+        }
     };
+    
+    componentDidMount() {
+        const { loadingData } = this;
+        loadingData();
+    }
 
     render() {
         const { boards } = this.state;
@@ -65,14 +74,13 @@ class Read extends Component {
                 >
                     삭제
                 </Button>
-                <Button
-                    variant="outlined"
-                    onClick={() => {
-                        alert('수정');
-                    }}
-                >
-                    수정
-                </Button>
+                <Link href={`/update/${boards.id}`}>
+                    <Button
+                        variant="outlined"
+                    >
+                        수정
+                    </Button>
+                </Link>
             </div>
         );
     }

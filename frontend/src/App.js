@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PostList from './routes/PostList';
 import Read from './routes/Read';
 import Write from './routes/Write';
-import Header from './components/Header'
+import Update from './routes/Update';
+import Header from './components/Header';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={PostList} />
             <Route path="/read/:postid" component={Read} />
+            <Route path="/update/:postid" component={Update} />
             <Route path="/write" component={Write} />
           </Switch>
         </div>
