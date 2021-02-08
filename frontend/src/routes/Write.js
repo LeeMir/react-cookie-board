@@ -12,10 +12,11 @@ class Write extends Component {
         content: ''
     };
 
-    postWrite = async() => {
+    postWrite = () => {
         try{
+            // trim, required
             if(this.state.title!==''&&this.state.author!==''&&this.state.content!=='') {
-                await fetch('http://localhost:3001/api/write', {
+                fetch('http://localhost:3001/api/write', {
                     method: 'post',
                     headers: {
                         'content-type' : 'application/json'
@@ -24,10 +25,6 @@ class Write extends Component {
                 })
                     .then( (reponse) => {
                         alert('작성 완료');
-                        this.setState({
-                            title: '',
-                            content: ''
-                        });
                         this.props.history.replace('/');
                     }
                 );

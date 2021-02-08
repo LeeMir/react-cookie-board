@@ -8,12 +8,12 @@ class Read extends Component {
         boards: []
     };
 
-    postDelete = async() => {
+    postDelete = () => {
         try{
             const id = {
                 id: this.props.match.params.postid
             };
-            await fetch('http://localhost:3001/api/delete', {
+            fetch('http://localhost:3001/api/delete', {
                     method: 'post',
                     headers: {
                         'content-type' : 'application/json'
@@ -29,7 +29,7 @@ class Read extends Component {
         }
     }
 
-    loadingData = async () => {
+    loadingData = () => {
         try {
             const id = {
                 id: this.props.match.params.postid

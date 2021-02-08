@@ -11,7 +11,7 @@ function Update(props) {
     const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
     const id = props.match.params.postid;
-    const postUpdate = async() => {
+    const postUpdate = () => {
         try{
             if(title!==''&&author!==''&&content!=='') {
                 let postInfo = {
@@ -19,8 +19,8 @@ function Update(props) {
                     title: title,
                     author: author,
                     content: content
-                }
-                await fetch('http://localhost:3001/api/update', {
+                } // const reponse = await fetch();
+                fetch('http://localhost:3001/api/update', {
                     method: 'post',
                     headers: {
                         'content-type' : 'application/json'
