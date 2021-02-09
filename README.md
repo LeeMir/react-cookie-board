@@ -1,4 +1,4 @@
-# React-homework
+# React-Cookie-Board
 
 게시판의 CRUD 기능을 구현해보기
 
